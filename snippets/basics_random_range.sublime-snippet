@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+extern crate rand;
+
+use rand::Rng;
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    println!("{}", rng.gen_range(${1:Range Begin}, ${2:Range End}));
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>randomrange</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.rust</scope>
+	<description>Generate random numbers within a range</description>
+</snippet>

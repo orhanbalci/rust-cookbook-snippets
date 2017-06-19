@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+extern crate rand;
+use rand::{Rng, Rand};
+
+#[derive(Debug)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Rand for Point {
+    fn rand<R: Rng>(rng: &mut R) -> Point {
+        let (rand_x, rand_y) = rng.gen();
+        Point {
+            x: rand_x,
+            y: rand_y,
+        }
+    }
+}
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    let rand_tuple = rng.gen::<(i32, bool, f64)>();
+    let rand_point: Point = rng.gen();
+    println!("Random tuple: {:?}", rand_tuple);
+    println!("Random Point: {:?}", rand_point);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>randomcustomtype</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.rust</scope>
+	<description>Generate random values of a custom type</description>
+</snippet>

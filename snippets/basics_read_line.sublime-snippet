@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+use std::fs::File;
+use std::io::{Write, BufReader, BufRead};
+
+fn run() -> Result<()> {
+    let path = "${1:File Path}";
+
+    let mut output = File::create(path)?;
+    write!(output, "${2:What to Write}")?;
+
+    let input = File::open(path)?;
+    let buffered = BufReader::new(input);
+
+    for line in buffered.lines() {
+        println!("{}", line?);
+    }
+
+    Ok(())
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>readline</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.rust</scope>
+	<description>Read lines of strings from a file</description>
+</snippet>

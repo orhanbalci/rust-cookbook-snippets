@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+extern crate rand;
+use rand::Rng;
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    println!("Random f64: {}", rng.gen::<f64>());
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>randomfloat</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.rust</scope>
+	<description>Generate random floating point numbers</description>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+extern crate rand;
+
+use rand::distributions::{Normal, IndependentSample};
+
+fn main() {
+    let normal = Normal::new(${1:Mean}, ${2:Standart Deviation});
+    let mut rng = rand::thread_rng();
+    let v = normal.ind_sample(&mut rng);
+    println!("{} is from a N(${1:Mean}, ${2:Standart Deviation}) distribution", v)
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>randomnormal</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.rust</scope>
+	<description>Generate random numbers with normal distribution</description>
+</snippet>

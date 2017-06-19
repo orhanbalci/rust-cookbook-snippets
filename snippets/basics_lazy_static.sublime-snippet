@@ -1,0 +1,35 @@
+<snippet>
+    <content><![CDATA[
+#[macro_use]
+extern crate lazy_static;
+
+use std::collections::HashMap;
+
+lazy_static! {
+    static ref PRIVILEGES: HashMap<&'static str, Vec<&'static str>> = {
+        let mut map = HashMap::new();
+        map.insert("James", vec!["user", "admin"]);
+        map.insert("Jim", vec!["user"]);
+        map
+    };
+}
+
+fn show_access(name: &str) {
+    let access = PRIVILEGES.get(name);
+    println!("{}: {:?}", name, access);
+}
+
+fn main() {
+    let access = PRIVILEGES.get("James");
+    println!("James: {:?}", access);
+
+    show_access("Jim");
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>lazystatic</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.rust</scope>
+    <description>Declare lazily evaluated constant</description>
+</snippet>

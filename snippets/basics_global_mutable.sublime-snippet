@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[
+#[macro_use]
+extern crate lazy_static;
+
+use std::sync::Mutex;
+
+lazy_static! {
+    static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
+}
+
+fn insert(fruit: &str) -> Result<()> {
+    // acquire exclusive access
+    let mut db = FRUIT.lock().map_err(|_| "Failed to acquire MutexGuard")?;
+    db.push(fruit.to_string());
+    Ok(())
+    // release exclusive access
+}
+
+fn run() -> Result<()> {
+    insert("apple")?;
+    insert("orange")?;
+    insert("peach")?;
+    {
+        // acquire access
+        let db = FRUIT.lock().map_err(|_| "Failed to acquire MutexGuard")?;
+
+        for (i, item) in db.iter().enumerate() {
+            println!("{}: {}", i, item);
+        }
+        // release access
+    }
+    insert("grape")?;
+    Ok(())
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>globalmutable</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.rust</scope>
+    <description>Maintain global mutable state</description>
+</snippet>
