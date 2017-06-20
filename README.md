@@ -4,8 +4,10 @@ This repository contains Sublime Text 3 snippets of cookbook recipes. It is an e
 
 ## How to install
 
-### Not Using Package Manager
----
+### Without Package Manager
+
+Save files to the Packages/Sublime Text 3 Snippets directory, then relaunch Sublime:
+
 >git clone https://github.com/orhanbalci/rust-cookbook-snippets.git
 
 >cd rust-cookbook-snippets
