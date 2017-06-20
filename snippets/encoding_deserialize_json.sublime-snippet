@@ -1,0 +1,39 @@
+<snippet>
+    <content><![CDATA[
+#[macro_use]
+extern crate serde_json;
+
+use serde_json::Value;
+
+fn run() -> Result<()> {
+    let j = r#"{
+                 "userid": 103609,
+                 "verified": true,
+                 "access_privileges": [
+                   "user",
+                   "admin"
+                 ]
+               }"#;
+
+    let parsed: Value = serde_json::from_str(j)?;
+
+    let expected = json!({
+        "userid": 103609,
+        "verified": true,
+        "access_privileges": [
+            "user",
+            "admin"
+        ]
+    });
+
+    assert_eq!(parsed, expected);
+
+    Ok(())
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>deserializejson</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.rust</scope>
+    <description>Serialize and deserialize unstructured JSON</description>
+</snippet>
