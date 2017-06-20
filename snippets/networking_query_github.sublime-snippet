@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+#[macro_use]
+extern crate serde_derive;
+extern crate reqwest;
+
+#[derive(Deserialize, Debug)]
+struct User {
+    login: String,
+    id: u32,
+    // remaining fields not deserialized for brevity
+}
+
+fn run() -> Result<()> {
+    let request_url = format!("https://api.github.com/repos/{owner}/{repo}/stargazers",
+                              owner = "brson",
+                              repo = "rust-cookbook");
+    println!("{}", request_url);
+    let mut response = reqwest::get(&request_url)?;
+
+    let users: Vec<User> = response.json()?;
+    println!("{:?}", users);
+    Ok(())
+}
+]]></content>
+    <tabTrigger>querygithub</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Query the GitHub API</description>
+</snippet>

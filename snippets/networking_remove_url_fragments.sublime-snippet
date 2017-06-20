@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+extern crate url;
+
+use url::{Url, Position};
+
+fn run() -> Result<()> {
+    let parsed = Url::parse("https://github.com/rust-lang/rust/issues?labels=E-easy&state=open")?;
+    let cleaned: &str = &parsed[..Position::AfterPath];
+    println!("cleaned: {}", cleaned);
+    Ok(())
+}
+]]></content>
+    <tabTrigger>removeurlfragments</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Remove fragment identifiers and query pairs from a URL</description>
+</snippet>

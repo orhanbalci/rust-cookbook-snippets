@@ -1,0 +1,55 @@
+<snippet>
+    <content><![CDATA[
+extern crate url;
+extern crate reqwest;
+#[macro_use]
+extern crate hyper;
+#[macro_use]
+extern crate serde_derive;
+
+use std::collections::HashMap;
+use url::Url;
+use reqwest::header::{UserAgent, Authorization, Bearer};
+
+// Custom header type
+header! { (XPoweredBy, "X-Powered-By") => [String] }
+
+// Helper for verification
+#[derive(Deserialize, Debug)]
+pub struct HeadersEcho {
+    pub headers: HashMap<String, String>,
+}
+
+fn run() -> Result<()> {
+    let client = reqwest::Client::new()?;
+
+    // Make request to webservice that will respond with JSON dict containing
+    // the headders set on HTTP GET request.
+    let url = Url::parse_with_params("http://httpbin.org/headers",
+                                     &[("lang", "rust"), ("browser", "servo")])?;
+
+    let mut response = client
+        .get(url)
+        .header(UserAgent("Rust-test".to_owned()))
+        .header(Authorization(Bearer { token: "DEadBEEfc001cAFeEDEcafBAd".to_owned() }))
+        .header(XPoweredBy("Guybrush Threepwood".to_owned()))
+        .send()?;
+
+    // JSON response should match the headers set on request
+    let out: HeadersEcho = response.json()?;
+    assert_eq!(out.headers["Authorization"],
+               "Bearer DEadBEEfc001cAFeEDEcafBAd");
+    assert_eq!(out.headers["User-Agent"], "Rust-test");
+    assert_eq!(out.headers["X-Powered-By"], "Guybrush Threepwood");
+    // Response contains full URL used to make the request
+    assert_eq!(response.url().as_str(),
+               "http://httpbin.org/headers?lang=rust&browser=servo");
+
+    println!("{:?}", out);
+    Ok(())
+}
+]]></content>
+    <tabTrigger>restcustomheader</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Set custom headers and URL parameters for a REST request</description>
+</snippet>

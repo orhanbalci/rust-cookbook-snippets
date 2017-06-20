@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+extern crate reqwest;
+
+use std::time::Duration;
+use reqwest::Client;
+
+fn run() -> Result<()> {
+    let request_url = "https://api.github.com/users/ferris-the-crab";
+    println!("{}", request_url);
+
+    // The timeout for the request is set to 5 seconds.
+    let timeout = Duration::new(5, 0);
+
+    let mut client = Client::new()?;
+    client.timeout(timeout);
+    let response = client.head(request_url).send()?;
+
+    if response.status().is_success() {
+        println!("ferris-the-crab is a user!");
+    } else {
+        println!("ferris-the-crab is not a user!");
+    }
+
+    Ok(())
+}
+]]></content>
+    <tabTrigger>checkapiexists</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Check if an API resource exists</description>
+</snippet>

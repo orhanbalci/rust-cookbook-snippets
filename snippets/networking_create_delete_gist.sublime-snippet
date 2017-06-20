@@ -1,0 +1,59 @@
+<snippet>
+    <content><![CDATA[
+extern crate reqwest;
+#[macro_use]
+extern crate serde_derive;
+#[macro_use]
+extern crate serde_json;
+
+use std::env;
+
+#[derive(Deserialize, Debug)]
+struct Gist {
+    id: String,
+    html_url: String,
+    // remaining fields not deserialized for brevity
+}
+
+fn run() -> Result<()> {
+    let gh_user = env::var("GH_USER")?;
+    let gh_pass = env::var("GH_PASS")?;
+
+    // The type `gist_body` is `serde_json::Value`
+    let gist_body = json!({
+        "description": "the description for this gist",
+        "public": true,
+        "files": {
+             "main.rs": {
+             "content": r#"fn main() { println!("hello world!");}"#
+            }
+        }});
+
+    // create the gist
+    let request_url = "https://api.github.com/gists";
+    let client = reqwest::Client::new()?;
+    let mut response = client
+        .post(request_url)
+        .basic_auth(gh_user.clone(), Some(gh_pass.clone()))
+        .json(&gist_body)
+        .send()?;
+
+    let gist: Gist = response.json()?;
+    println!("Created {:?}", gist);
+
+    // delete the gist
+    let request_url = format!("{}/{}",request_url, gist.id);
+    let client = reqwest::Client::new()?;
+    let response = client
+        .delete(&request_url)
+        .basic_auth(gh_user, Some(gh_pass))
+        .send()?;
+
+    println!("Gist {} deleted! Status code: {}",gist.id, response.status());
+    Ok(())
+}
+]]></content>
+    <tabTrigger>createdeletegist</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Create and delete Gist with GitHub API</description>
+</snippet>

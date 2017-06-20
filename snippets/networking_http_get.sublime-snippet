@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+extern crate reqwest;
+
+use std::io::Read;
+
+fn run() -> Result<()> {
+    let mut res = reqwest::get("http://httpbin.org/get")?;
+    let mut body = String::new();
+    res.read_to_string(&mut body)?;
+
+    println!("Status: {}", res.status());
+    println!("Headers:\n{}", res.headers());
+    println!("Body:\n{}", body);
+
+    Ok(())
+}
+]]></content>
+    <tabTrigger>httpget</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Make a HTTP GET request</description>
+</snippet>
