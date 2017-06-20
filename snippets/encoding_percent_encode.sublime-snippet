@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+extern crate url;
+
+use url::percent_encoding::{utf8_percent_encode, percent_decode, DEFAULT_ENCODE_SET};
+
+fn run() -> Result<()> {
+    let input = "${1:Input}";
+
+    let iter = utf8_percent_encode(input, DEFAULT_ENCODE_SET);
+    let encoded: String = iter.collect();
+    let iter = percent_decode(encoded.as_bytes());
+    let decoded = iter.decode_utf8()?;
+    assert_eq!(decoded, "${1:Input}");
+    Ok(())
+}
+]]></content>	
+	<tabTrigger>percentencode</tabTrigger>	
+	<scope>source.rust</scope>
+	<description>Percent-encode a string</description>
+</snippet>
