@@ -21,7 +21,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>find-files-predicte</tabTrigger>
+    <tabTrigger>find-files-predicate</tabTrigger>
     <scope>source.rust</scope>
     <description>Recursively find all files with given predicate</description>
 </snippet>
