@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+extern crate url;
+
+use url::Url;
+
+fn run() -> Result<()> {
+    let s = "https://github.com/rust-lang/rust/issues?labels=E-easy&state=open";
+
+    let parsed = Url::parse(s)?;
+    println!("The path part of the URL is: {}", parsed.path());
+
+    Ok(())
+}
+]]></content>	
+	<tabTrigger>parseurl</tabTrigger>	
+	<scope>source.rust</scope>
+	<description>Parse a URL from a string to a Url type</description>
+</snippet>
