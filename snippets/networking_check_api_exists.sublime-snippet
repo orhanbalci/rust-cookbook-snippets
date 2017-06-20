@@ -25,7 +25,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>checkapiexists</tabTrigger>
+    <tabTrigger>check-api-exists</tabTrigger>
     <scope>source.rust</scope>
     <description>Check if an API resource exists</description>
 </snippet>

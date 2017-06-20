@@ -49,7 +49,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>restcustomheader</tabTrigger>
+    <tabTrigger>rest-custom-header</tabTrigger>
     <scope>source.rust</scope>
     <description>Set custom headers and URL parameters for a REST request</description>
 </snippet>

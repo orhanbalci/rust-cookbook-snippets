@@ -26,7 +26,7 @@ fn find_max(arr: &[i32], start: usize, end: usize) -> i32 {
     })
 }
 ]]></content>   
-    <tabTrigger>spawnthread</tabTrigger>   
+    <tabTrigger>spawn-thread</tabTrigger>   
     <scope>source.rust</scope>
     <description>Spawn a short-lived thread</description>
 </snippet>

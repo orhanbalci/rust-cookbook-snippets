@@ -25,7 +25,7 @@ fn run() -> Result<()> {
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>deserializetomlvalue</tabTrigger>
+    <tabTrigger>deserialize-toml-value</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.rust</scope>
     <description>Deserialize a TOML configuration file into toml::Value</description>

@@ -11,7 +11,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>removeurlfragments</tabTrigger>
+    <tabTrigger>remove-url-fragments</tabTrigger>
     <scope>source.rust</scope>
     <description>Remove fragment identifiers and query pairs from a URL</description>
 </snippet>

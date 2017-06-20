@@ -1,0 +1,33 @@
+<snippet>
+    <content><![CDATA[
+#[macro_use]
+extern crate log;
+extern crate log4rs;
+
+use log::LogLevelFilter;
+use log4rs::append::file::FileAppender;
+use log4rs::encode::pattern::PatternEncoder;
+use log4rs::config::{Appender, Config, Root};
+
+fn run() -> Result<()> {
+    let logfile = FileAppender::builder()
+        .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))
+        .build("log/output.log")?;
+
+    let config = Config::builder()
+        .appender(Appender::builder().build("logfile", Box::new(logfile)))
+        .build(Root::builder()
+                   .appender("logfile")
+                   .build(LogLevelFilter::Info))?;
+
+    log4rs::init_config(config)?;
+
+    info!("Hello, world!");
+
+    Ok(())
+}
+]]></content>
+    <tabTrigger>log-to-custom-location</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Log messages to a custom location</description>
+</snippet>

@@ -83,7 +83,7 @@ impl Iterator for ReverseDependencies {
     }
 }
 ]]></content>
-    <tabTrigger>paginatedrestclient</tabTrigger>
+    <tabTrigger>paginated-rest-client</tabTrigger>
     <scope>source.rust</scope>
     <description>Consume a paginated RESTful API</description>
 </snippet>

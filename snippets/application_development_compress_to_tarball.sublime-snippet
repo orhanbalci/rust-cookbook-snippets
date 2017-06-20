@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+extern crate tar;
+extern crate flate2;
+
+use std::fs::File;
+use flate2::Compression;
+use flate2::write::GzEncoder;
+
+fn run() -> Result<()> {
+    let tar_gz = File::create("archive.tar.gz")?;
+    let enc = GzEncoder::new(tar_gz, Compression::Default);
+    let mut tar = tar::Builder::new(enc);
+    tar.append_dir_all("backup/logs", "/var/log")?;
+    Ok(())
+}
+]]></content>
+    <tabTrigger>compress-tarball</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Compress a directory into tarball</description>
+</snippet>

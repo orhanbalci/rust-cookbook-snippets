@@ -20,7 +20,7 @@ fn run() -> Result<()> {
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>readline</tabTrigger>
+	<tabTrigger>read-line</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.rust</scope>
 	<description>Read lines of strings from a file</description>

@@ -23,7 +23,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>querygithub</tabTrigger>
+    <tabTrigger>query-github</tabTrigger>
     <scope>source.rust</scope>
     <description>Query the GitHub API</description>
 </snippet>

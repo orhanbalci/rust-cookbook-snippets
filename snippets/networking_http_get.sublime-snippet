@@ -16,7 +16,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>httpget</tabTrigger>
+    <tabTrigger>http-get</tabTrigger>
     <scope>source.rust</scope>
     <description>Make a HTTP GET request</description>
 </snippet>

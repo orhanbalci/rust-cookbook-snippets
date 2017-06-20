@@ -36,7 +36,7 @@ fn base_url(mut url: Url) -> Result<Url> {
     Ok(url)
 }
 ]]></content>   
-    <tabTrigger>createbaseurl</tabTrigger>   
+    <tabTrigger>create-baseurl</tabTrigger>   
     <scope>source.rust</scope>
     <description>Create a base URL by removing path segments</description>
 </snippet>

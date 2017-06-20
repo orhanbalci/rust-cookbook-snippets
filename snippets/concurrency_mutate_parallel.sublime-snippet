@@ -12,7 +12,7 @@ fn main() {
     println!("{:?}", arr);
 }
 ]]></content>	
-	<tabTrigger>parallelmutarray</tabTrigger>	
+	<tabTrigger>parallel-mut-array</tabTrigger>	
 	<scope>source.rust</scope>
 	<description>Mutate the elements of an array in parallel</description>
 </snippet>

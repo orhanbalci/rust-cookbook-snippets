@@ -13,7 +13,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>	
-	<tabTrigger>parseurl</tabTrigger>	
+	<tabTrigger>parse-url</tabTrigger>	
 	<scope>source.rust</scope>
 	<description>Parse a URL from a string to a Url type</description>
 </snippet>

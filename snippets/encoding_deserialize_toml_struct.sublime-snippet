@@ -42,7 +42,7 @@ fn run() -> Result<()> {
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>deserializetomlstruct</tabTrigger>
+    <tabTrigger>deserialize-toml-struct</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.rust</scope>
     <description>Deserialize a TOML configuration file into its own struct using serde</description>

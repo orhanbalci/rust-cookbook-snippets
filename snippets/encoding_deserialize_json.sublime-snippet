@@ -32,7 +32,7 @@ fn run() -> Result<()> {
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>deserializejson</tabTrigger>
+    <tabTrigger>deserialize-json</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.rust</scope>
     <description>Serialize and deserialize unstructured JSON</description>

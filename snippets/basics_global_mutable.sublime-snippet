@@ -35,7 +35,7 @@ fn run() -> Result<()> {
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>globalmutable</tabTrigger>
+    <tabTrigger>global-mutable</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.rust</scope>
     <description>Maintain global mutable state</description>

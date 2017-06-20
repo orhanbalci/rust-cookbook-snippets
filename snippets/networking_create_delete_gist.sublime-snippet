@@ -53,7 +53,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>createdeletegist</tabTrigger>
+    <tabTrigger>create-delete-gist</tabTrigger>
     <scope>source.rust</scope>
     <description>Create and delete Gist with GitHub API</description>
 </snippet>

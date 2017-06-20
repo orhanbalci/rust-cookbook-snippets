@@ -21,7 +21,7 @@ fn run() -> Result<()> {
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>randomaccessfile</tabTrigger>
+    <tabTrigger>random-access-file</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.rust</scope>
     <description>Access a file randomly using a memory map</description>

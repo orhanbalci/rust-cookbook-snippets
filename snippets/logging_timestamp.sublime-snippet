@@ -1,0 +1,32 @@
+<snippet>
+    <content><![CDATA[
+#[macro_use]
+extern crate log;
+extern crate env_logger;
+extern crate chrono;
+
+use chrono::Local;
+use env_logger::LogBuilder;
+use std::env;
+
+fn run() -> Result<()> {
+    LogBuilder::new()
+        .format(|record| {
+                    format!("{} [{}] - {}",
+                            Local::now().format("%Y-%m-%dT%H:%M:%S"),
+                            record.level(),
+                            record.args())
+                })
+        .parse(&env::var("MY_APP_LOG").unwrap_or_default())
+        .init()?;
+
+    warn!("warn");
+    info!("info");
+    debug!("debug");
+    Ok(())
+}
+]]></content>
+    <tabTrigger>log-with-timestamp</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Include timestamp in log messages</description>
+</snippet>

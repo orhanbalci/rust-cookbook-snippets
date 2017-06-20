@@ -25,7 +25,7 @@ fn build_github_url(path: &str) -> Result<Url> {
     Ok(joined)
 }
 ]]></content>
-    <tabTrigger>createurl</tabTrigger>
+    <tabTrigger>create-url</tabTrigger>
     <scope>source.rust</scope>
     <description>Create new URLs from a base URL</description>
 </snippet>

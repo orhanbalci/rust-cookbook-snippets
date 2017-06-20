@@ -15,7 +15,7 @@ fn main() {
     println!("decoded:'{}'", decoded);
 }
 ]]></content>	
-	<tabTrigger>urlencode</tabTrigger>	
+	<tabTrigger>url-encode</tabTrigger>	
 	<scope>source.rust</scope>
 	<description>Encode a string as application/x-www-form-urlencoded</description>
 </snippet>

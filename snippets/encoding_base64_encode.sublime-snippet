@@ -17,7 +17,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>	
-	<tabTrigger>base64encode</tabTrigger>	
+	<tabTrigger>base64-encode</tabTrigger>	
 	<scope>source.rust</scope>
 	<description>Encode and decode base64</description>
 </snippet>

@@ -1,0 +1,27 @@
+<snippet>
+    <content><![CDATA[
+extern crate reqwest;
+extern crate select;
+
+use select::document::Document;
+use select::predicate::Name;
+
+fn run() -> Result<()> {
+    let res = reqwest::get("https://www.rust-lang.org/en-US/")?;
+
+    let document = Document::from_read(res)?;
+
+    let links = document.find(Name("a"))
+        .filter_map(|n| n.attr("href"));
+
+    for link in links {
+        println!("{}", link);
+    }
+
+    Ok(())
+}
+]]></content>
+    <tabTrigger>extract-all-links</tabTrigger>
+    <scope>source.rust</scope>
+    <description>Extract all links from a webpage</description>
+</snippet>

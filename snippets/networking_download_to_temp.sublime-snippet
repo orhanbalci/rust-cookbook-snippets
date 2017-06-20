@@ -35,7 +35,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>downloadtotemp</tabTrigger>
+    <tabTrigger>download-to-temp-directory</tabTrigger>
     <scope>source.rust</scope>
     <description>Download a file to a temporary directory</description>
 </snippet>

@@ -38,7 +38,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>   
-    <tabTrigger>drawfractal</tabTrigger>   
+    <tabTrigger>draw-fractal</tabTrigger>   
     <scope>source.rust</scope>
     <description>Draw fractal dispatching work to a thread pool</description>
 </snippet>

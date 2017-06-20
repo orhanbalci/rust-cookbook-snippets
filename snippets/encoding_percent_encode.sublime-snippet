@@ -15,7 +15,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>	
-	<tabTrigger>percentencode</tabTrigger>	
+	<tabTrigger>percent-encode</tabTrigger>	
 	<scope>source.rust</scope>
 	<description>Percent-encode a string</description>
 </snippet>

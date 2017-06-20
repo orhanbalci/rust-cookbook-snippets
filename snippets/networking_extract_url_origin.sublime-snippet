@@ -21,7 +21,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>
-    <tabTrigger>extracturlorigin</tabTrigger>
+    <tabTrigger>extract-url-origin</tabTrigger>
     <scope>source.rust</scope>
     <description>Extract the URL origin (scheme / host / port)</description>
 </snippet>

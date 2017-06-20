@@ -18,7 +18,7 @@ fn run() -> Result<()> {
     Ok(())
 }
 ]]></content>	
-	<tabTrigger>hexencode</tabTrigger>	
+	<tabTrigger>hex-encode</tabTrigger>	
 	<scope>source.rust</scope>
 	<description>Encode and decode hex</description>
 </snippet>
