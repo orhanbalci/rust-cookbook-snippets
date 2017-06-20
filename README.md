@@ -3,11 +3,15 @@
 This repository contains Sublime Text 3 snippets of cookbook recipes. It is an effort to spread idiomatic Rust code. Feel free to contribute. 
 
 ## How to install
----
+
 ### Not Using Package Manager
 ---
 >git clone https://github.com/orhanbalci/rust-cookbook-snippets.git
+
 >cd rust-cookbook-snippets
+
 >Linux: sudo cp -r snippets/ ~/.config/sublime-text-3/Packages/
+
 >Mac: sudo cp snippets/ ~/Library/Application Support/Sublime-Text-3/Packages/
+
 >Windows: cp %APPDATA%/Sublime-Text-3/Packages/
