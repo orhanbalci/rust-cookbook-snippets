@@ -26,4 +26,5 @@ Save files to the Packages/Sublime Text 3 Snippets directory, then relaunch Subl
 
 ### Some Examples
 >http-get => http get code snippet
+
 >random-float => generate random floating number snippet
