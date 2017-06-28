@@ -3,6 +3,12 @@
 This repository contains Sublime Text 3 snippets of cookbook recipes. It is an effort to spread idiomatic Rust code. Feel free to contribute. 
 
 ## How to install
+### With Package Manager
+>Open command palette with Ctrl+Shift+P
+
+>Search for Install Package command
+
+>Search for RustCookbookSnippets
 
 ### Without Package Manager
 
