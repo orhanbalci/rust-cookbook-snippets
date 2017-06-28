@@ -23,3 +23,7 @@ Save files to the Packages/Sublime Text 3 Snippets directory, then relaunch Subl
 >Mac: sudo cp snippets/ ~/Library/Application Support/Sublime-Text-3/Packages/
 
 >Windows: cp %APPDATA%/Sublime-Text-3/Packages/
+
+### Some Examples
+>http-get => http get code snippet
+>random-float => generate random floating number snippet
