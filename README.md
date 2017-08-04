@@ -1,5 +1,5 @@
 # Rust Cookbook Snippets
-[Rust Cookbook](https://brson.github.io/rust-cookbook/intro.html) is part of an effort to stabilize most commonly used Rust crates.
+[Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) is part of an effort to stabilize most commonly used Rust crates.
 This repository contains Sublime Text 3 snippets of cookbook recipes. It is an effort to spread idiomatic Rust code. Feel free to contribute. 
 
 ## How to install
